@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HATE Stack Demo</title>
+  <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.0/dist/cdn.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-10">
+  <h1 class="text-3xl font-bold mb-4">HATE Stack Demo</h1>
+
+  <div hx-get="/data" hx-trigger="click" hx-target="#response" class="cursor-pointer p-4 bg-blue-500 text-white rounded-lg">
+    Click me to get data
+  </div>
+  <div id="response" class="mt-4 text-xl"></div>
+
+  <div x-data="{ open: false }" class="mt-8">
+    <button @click="open = !open" class="p-2 bg-green-500 text-white rounded-lg">Toggle Alpine</button>
+    <div x-show="open" class="mt-4 p-4 bg-gray-100 rounded-lg">
+      Alpine content
+    </div>
+  </div>
+</body>
+</html>
